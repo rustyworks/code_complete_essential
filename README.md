@@ -53,7 +53,7 @@
 - Avoid variable with hidden meaning.  Eg: page_count for number of page printed, but also has flag -1 when indicating errors.  This make page_count has 2 type of data, integer and boolean.
 - Considering length of name, not too long, and obvious enough to understand
 - Express a good name in “what” terms, not “how”.  Eg: employeeData is better than inputRecord, printerReady is better than bitFlag
-- Be consistent between aggregation name and object name.  Eg: total_revenue should not be used with revenue_total. Use one only but not both (writter suggest revenue_total, <object>_<aggregate>). I think the reason is to grouping by object first, then know the function is
+- Be consistent between aggregation name and object name.  Eg: total_revenue should not be used with revenue_total. Use one only but not both (writter suggest revenue_total, `<object>_<aggregate>`). I think the reason is to grouping by object first, then know the function is
 - If use abbrevation, use pronouncable abbrevation. Avoid ambiguous words.
 
 
