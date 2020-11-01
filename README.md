@@ -196,8 +196,17 @@
     MIN_ELEMENTS <= i and i <= MAX_ELEMENTS
     ```
   Is in the middle like this comparison: `MIN_ELEMENTS <= i <= MAX_ELEMENTS` in math. Also this is mental mapping just like cartesian x. Which smaller value is on the left and larger value in on the right.
-- To reduce nested logic block, we can consider a. Multiple flat logic b. Consider use `case` or `elif`(else if) instead nested `if` c. Refactor inside logic with routines d. Use polymorphism or pattern matching
-- Measure complexity with McCabe technique: a. Start with 1 b. Add 1 every loop (`for`, `while`), branching (`if`, `else if`, `case`), comparison (`and` & `or`) The guideline is: a. 1-5 routine is fine b. 6-10 need to simplify the routine c. 10+ break part to new routine and call it on the first routine
+- To reduce nested logic block, we can consider
+  a. Multiple flat logic
+  b. Consider use `case` or `elif`(else if) instead nested `if`
+  c. Refactor inside logic with routines d. Use polymorphism or pattern matching
+- Measure complexity with McCabe technique:
+  a. Start with 1
+  b. Add 1 every loop (`for`, `while`), branching (`if`, `else if`, `case`), comparison (`and` & `or`)
+  The guideline is:
+  a. 1-5 routine is fine
+  b. 6-10 need to simplify the routine
+  c. 10+ break part to new routine and call it on the first routine
 - All complexity so far: naming, number of params, variable span, variable live, nested logic, and mc cabe
 
 
