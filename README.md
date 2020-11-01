@@ -7,7 +7,8 @@
 - Software construction = Building software. Building dog house != building skyscraper
 - Measure twice, cut once. Try to detect defect early (architecture phase or design phase) instead on coding phase.
 - Having a good problem definition. Having a good requirements.
-- Architecting is about defining resources and constraints.  Eg: Program Organization, Major Class Design, Data Design (eg: this column should be integer), Business Rule, UI Design, Resource Management, Security, Performance, Scalability, Interoperability, Internationalization/Localization, I/O, Error Processing
+- Architecting is about defining resources and constraints.  
+  Eg: Program Organization, Major Class Design, Data Design (eg: this column should be integer), Business Rule, UI Design, Resource Management, Security, Performance, Scalability, Interoperability, Internationalization/Localization, I/O, Error Processing
 
 
 ## Part II: Creating High Quality Code
@@ -19,12 +20,16 @@
 - Design is iterative process. Try to get to the previous point to check is design is valid or not. Try to divide and conquer process.
 
 ### B. Working Classes
-- Use it to create ADT (Abstract Data Type), when attributes are complex.  Eg: `current_font`, `stack`
+- Use it to create ADT (Abstract Data Type), when attributes are complex.  
+  Eg: `current_font`, `stack`
 - Try favor to read-time instead write time. Create abstraction and encapsulation that easy to read. Be consistent about the layer of interface.
-- Containtment = **Has a** relationship. Usually use interface in C# or Java.  Eg: telemarketer and mosquito **has a** annoying people method. (Real life is IDisposable interface or Mixins in Python)
-- Inheritance = **Is a** relationship. Usually use inheritance from class/base class.  Eg: telemarketer and peddler **is a** person and have method speak. (Real life is Views in Django)
+- Containtment = **Has a** relationship. Usually use interface in C# or Java.  
+  Eg: telemarketer and mosquito **has a** annoying people method. (Real life is IDisposable interface or Mixins in Python)
+- Inheritance = **Is a** relationship. Usually use inheritance from class/base class.
+  Eg: telemarketer and peddler **is a** person and have method speak. (Real life is Views in Django)
 - Class name should be noun. Avoid verbs. If it related to verbs, consider to create function only
-- Liskov: Derived class should be agree with all method from parent class (is a). Interface Segregation: Dont put unused Interface to your class (has a).
+- Liskov: Derived class should be agree with all method from parent class (is a).  
+  Interface Segregation: Dont put unused Interface to your class (has a).
 
 ### C. High Quality Routine
 - Routine should be do one thing. If it possible, dont use any condition/flag at routine
@@ -34,13 +39,15 @@
 
 ### D. Defensive Programming
 - Assert for expected internal value, try-catch for user input
-- Handle between correctness and robustness. Correctness, value must be correct, otherwise crash. Robustness normalize output when value is wrong.  Eg:
+- Handle between correctness and robustness. Correctness, value must be correct, otherwise crash. Robustness normalize output when value is wrong.
+  Eg:
     ```
     int number = 0
     string words = "".
     ```
 - We can add baricade to clean up data before processing it.
-- Even `Exception` should be in correct abstraction.  Eg: `UserNotFoundException`
+- Even `Exception` should be in correct abstraction.  
+  Eg: `UserNotFoundException`
 - Offensive programming: On development, make error is painful enough so we should fix it.
 
 ### E. Pseudocode Programming Process
@@ -51,8 +58,10 @@
 ## Part III: Variables
 
 - Initialize variables as close as possible to where they’re first used
-- Try to make variable short span (the usage between variable) and short live time (when the last variable used).  Eg: variable `employee` are used in line 1, 3, 5, 7. So span average is 2, and live time is 7.
-- Group related statement to one block. It is shortening span and live time, also easier to refactor (extract method).  Prefer this: 
+- Try to make variable short span (the usage between variable) and short live time (when the last variable used).  
+  Eg: variable `employee` are used in line 1, 3, 5, 7. So span average is 2, and live time is 7.
+- Group related statement to one block. It is shortening span and live time, also easier to refactor (extract method).  
+  Prefer this: 
     ```
     declare var1
     use var1
@@ -62,7 +71,7 @@
     use var2
     modify var2
     ```
-  Instead of: 
+  Instead of:  
     ```
     declare var1
     declare var2
@@ -74,10 +83,16 @@
     modify var2
     ```
 - Use variable for one purpose. Never use variable name like `temp` and reassign it with another purpose
-- Avoid variable with hidden meaning.  Eg: `page_count` for number of page printed, but also has flag -1 when indicating errors.  This make `page_count` has 2 type of data, **integer** and **boolean**.
+- Avoid variable with hidden meaning.  
+  Eg: `page_count` for number of page printed, but also has flag -1 when indicating errors.  
+  This make `page_count` has 2 type of data, **integer** and **boolean**.
 - Considering length of name, not too long, and obvious enough to understand
-- Express a good name in **what** terms, not **how**.  Eg: `employeeData` is better than `inputRecord`, `printerReady` is better than `bitFlag`
-- Be consistent between aggregation name and object name.  Eg: `total_revenue` should not be used with `revenue_total`. Use one only but not both (writter suggest `revenue_total`, **[object]_[aggregate]**). I think the reason is to grouping by object first, then know the function is
+- Express a good name in **what** terms, not **how**.  
+  Eg: `employeeData` is better than `inputRecord`, `printerReady` is better than `bitFlag`
+- Be consistent between aggregation name and object name.  
+  Eg: `total_revenue` should not be used with `revenue_total`.  
+  Use one only but not both (writter suggest `revenue_total`, **[object]_[aggregate]**).  
+  I think the reason is to grouping by object first, then know the function is
 - If use abbrevation, use pronouncable abbrevation. Avoid ambiguous words.
 
 
@@ -85,7 +100,8 @@
 
 ### A. Using Conditionals
 - Organized statement is not overlapping. It boxed, and can be nested. (see Part III point 3)
-- Put normal case on `if` rather than `else`.  Prefer this: 
+- Put normal case on `if` rather than `else`.  
+  Prefer this: 
     ```python3
     if (success):
         do_something()
@@ -99,7 +115,8 @@
     else:
         do_something()
     ```
-- About 50-70% use if and else instead if alone.  Prefer this:
+- About 50-70% use if and else instead if alone.  
+  Prefer this:
     ```python3
     if condition_true:
         number = 2
@@ -116,7 +133,8 @@
 
 ### B. Controlling Loops
 - Treat code inside loop like a black box.
-- Never use last value of loop as the result.  Eg: 
+- Never use last value of loop as the result.  
+  Eg: 
     ```c
     for (i = 0; i < 10; i++) {
       do_something();
@@ -130,7 +148,8 @@
 - Use multiple return to enhance readability. Multiple return is better than deeply nested `if`.
 
 ### D. Table Driven Methods
-- Change multiple complicated logic checking using table.  From: 
+- Change multiple complicated logic checking using table.  
+  From: 
     ```python3
     if chars == 1:
         do_something() 
@@ -146,7 +165,8 @@
 - Usually used when data have **stair** value, or grading value. Not totally different logic.
 
 ### E. General Control Issues
-- Never emulate other type if you means boolean. Also it doesn’t necessary to test boolean with the value.  Prefer this: 
+- Never emulate other type if you means boolean. Also it doesn’t necessary to test boolean with the value.  
+  Prefer this: 
     ```python3
     if is_ready:
         do_something()
@@ -157,7 +177,8 @@
         do_something()
     ```
   To reduce mental mapping
-- Try to use positive boolean if needed.  Prefer this:
+- Try to use positive boolean if needed.  
+  Prefer this:
     ```python3
     if is_success:
         do_something()
@@ -178,12 +199,14 @@
     else:
         do_something()
     ```
-- Apply De Morgan theorem to simplify logic.  Eg:
+- Apply De Morgan theorem to simplify logic.  
+  Eg:
     ```python3
     not A and not B == not (A or B)
     not A or not B == not (A and B)
     ```
-- Use parentheses to ensure expression meaning, rather than relying on the evaluation order.  Prefer this:
+- Use parentheses to ensure expression meaning, rather than relying on the evaluation order.  
+  Prefer this:
     ```python3
     if ((a < b) == (c == d)):
     ```
@@ -191,15 +214,18 @@
     ```python3
     if ( a < b == c == d ):
     ```
-- Organize numeric test so they follow the points on a number line.  Eg:  
+- Organize numeric test so they follow the points on a number line.  
+  Eg:  
     ```
     MIN_ELEMENTS <= i and i <= MAX_ELEMENTS
     ```
-  Is in the middle like this comparison: `MIN_ELEMENTS <= i <= MAX_ELEMENTS` in math. Also this is mental mapping just like cartesian x. Which smaller value is on the left and larger value in on the right.
+  Is in the middle like this comparison: `MIN_ELEMENTS <= i <= MAX_ELEMENTS` in math.  
+  Also this is mental mapping just like cartesian x. Which smaller value is on the left and larger value in on the right.
 - To reduce nested logic block, we can consider  
   a. Multiple flat logic  
   b. Consider use `case` or `elif`(else if) instead nested `if`  
-  c. Refactor inside logic with routines d. Use polymorphism or pattern matching
+  c. Refactor inside logic with routines  
+  d. Use polymorphism or pattern matching
 - Measure complexity with McCabe technique:  
   a. Start with 1  
   b. Add 1 every loop (`for`, `while`), branching (`if`, `else if`, `case`), comparison (`and` & `or`)  
@@ -214,12 +240,20 @@
 
 - Product defect can be detected better using code inspection (code review) instead of test. And Extreme programming (combination pairing, code inspection, code review, testing) can detect almost 90% - 97% product defect.
 - Testing does not improve software qualities. Test results are an indicator of quality. If you want to improve your software, do not test more; develop better.
-- Writing test first are have more benefit: a. We can detect defect earlier b. Force us to think at least a little bit about requirements and design before writing code c. Expose requirements problem sooner, because if it hard to test then requirements is poor.
+- Writing test first are have more benefit:  
+  a. We can detect defect earlier  
+  b. Force us to think at least a little bit about requirements and design before writing code  
+  c. Expose requirements problem sooner, because if it hard to test then requirements is poor.
 - Test every branching, loop, and condition (Mc Cabe complexity). Using all true path first, and then evaluate every branching, looping, and condition to false one by one.
 - For data testing, we should try combination of all branching. For example if there any 2 `if` `else`, then we should try all if true, one if false, opposite, and both if false. If it related to value, test edge case.
 - Try to use case where hand calculation are enough. Using ugly number it's no more likely to than any other number in its equivalence class.
 - Problematic class / routine usually tend to have more problem. Recent changed code also can introduce problem.
-- Consider refactoring when: a. Code duplicate (when you need to change a piece of code in two places. b. Routine is too long. c. Loop is too deeply nested. d. Class has poor cohesion (also has too much coupling). e. Routine has too many params
+- Consider refactoring when:  
+  a. Code duplicate (when you need to change a piece of code in two places.  
+  b. Routine is too long.  
+  c. Loop is too deeply nested.  
+  d. Class has poor cohesion (also has too much coupling).  
+  e. Routine has too many params
 - Putting busiest loop at inside loop can improve performance
 
 
@@ -235,7 +269,8 @@ Formula:
 ## Part VII: Software Craftsmanship
 
 - Use whitespace to enhance readability.
-- Self preferences, for breaking multiple statement, ensure the operand is on the front  Eg: 
+- Self preferences, for breaking multiple statement, ensure the operand is on the front  
+  Eg: 
     ```python3
     if a + 1 == 0 
        && b == 10
@@ -243,7 +278,8 @@ Formula:
 
     ```
   Reason is: Easier to check what operation performed
-- Preferable to new line params if params long.  Prefer this:
+- Preferable to new line params if params long.  
+  Prefer this:
     ```python3
     def routine(
         args_1,
