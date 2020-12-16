@@ -4,15 +4,15 @@
 ## Part I: Laying Foundation
 
 - Constructing process: Design, Coding, Debugging, Integration, Testing
-- Steps design:
-  1. Explain software purpose in Leyman's term
-  2. Create visual design mockup
-  3. Create user stories
-    3.1. When creating all user stories / cases. Make notes on all noun
-    3.2. All possible noun will be a new class (Model -> Go to 5)
-    3.3. All possible verb will be a method (Interface -> Go to 5)
-  4. Split user stories to task
-  5. Create UML
+- Steps design:  
+  1. Explain software purpose in Leyman's term  
+  2. Create visual design mockup  
+  3. Create user stories  
+    * When creating all user stories / cases. Make notes on all noun  
+    * All possible noun will be a new class (Model -> Go to v)  
+    * All possible verb will be a method (Interface -> Go to v)  
+  4. Split user stories to task  
+  5. Create UML  
 - Software construction = Building software. Building dog house != building skyscraper
 - Measure twice, cut once. Try to detect defect early (architecture phase or design phase) instead on coding phase.
 - Having a good problem definition. Having a good requirements.
