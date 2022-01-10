@@ -29,7 +29,7 @@
 - Design is iterative process. Try to get to the previous point to check is design is valid or not. Try to divide and conquer process.
 
 ### B. Working Classes
-- Use it to create ADT (Abstract Data Type), when attributes are complex.  
+- Use it to create ADT (Abstract Data Type), when attributes are complex. We can detect it when the property has prefix (like font_color, font_size)  
   Eg: `current_font`, `stack`
 - Try favor to read-time instead write time. Create abstraction and encapsulation that easy to read. Be consistent about the layer of interface.
 - Containtment = **Has a** relationship. Usually use interface in C# or Java.  
@@ -38,7 +38,8 @@
   Eg: telemarketer and peddler **is a** person and have method speak. (Real life is Views in Django)
 - Class name should be noun. Avoid verbs. If it related to verbs, consider to create function only
 - Liskov: Derived class should be agree with all method from parent class (is a).  
-  Interface Segregation: Dont put unused Interface to your class (has a).
+  Interface Segregation: Dont put unused Interface to your class (has a).  
+- On multiple inheritance (like Python) remember MRO: In python are from left, to up, and right, to up. (can be checked with `__mro__`).
 
 ### C. High Quality Routine
 - Routine should be do one thing. If it possible, dont use any condition/flag at routine
@@ -168,6 +169,7 @@
     ```
   Into:
     ```python3
+    chars = {1: do_something, 2: another_task}
     chars[char_at]
     ```
   This chars is either hash or array prefilled with statement.
