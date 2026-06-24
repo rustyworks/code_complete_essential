@@ -1,11 +1,13 @@
 # Guide Line Code Complete
 
+### All design heuristics, naming conventions, and testing strategies in this guide serve a single master purpose: to minimize cognitive load and manage software complexity.
+
 
 ## Part I: Laying Foundation
 
 - Constructing process: Design, Coding, Debugging, Integration, Testing
 - Steps design:  
-  1. Explain software purpose in Leyman's term  
+  1. Explain software purpose in Layman's term  
   2. Create visual design mockup  
   3. Create user stories  
     * When creating all user stories / cases. Make notes on all noun  
@@ -55,14 +57,14 @@
     int number = 0
     string words = "".
     ```
-- We can add baricade to clean up data before processing it.
+- We can add barricade to clean up data before processing it.
 - Even `Exception` should be in correct abstraction.  
   Eg: `UserNotFoundException`
 - Offensive programming: On development, make error is painful enough so we should fix it.
 
 ### E. Pseudocode Programming Process
 - Use English to describe the problem, don’t use any syntax or computer words. Describe what todo instead what to implement
-- After creating routine, mentally checking routing. Do not depends on compiler. Because this leading to mental hack
+- After creating routine, mentally checking routines. Do not depends on compiler. Because this leading to mental hack
 
 
 ## Part III: Variables
