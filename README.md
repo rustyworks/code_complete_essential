@@ -70,9 +70,9 @@
 ## Part III: Variables
 
 - Initialize variables as close as possible to where they’re first used
-- Try to make variable short lifetime (the usage between variable) and short live time (when the last variable used).  
-  Eg: variable `employee` are used in line 1, 3, 5, 7. So lifetime average is 2, and live time is 7.
-- Group related statement to one block. It is shortening lifetime and live time, also easier to refactor (extract method).  
+- Try to make variable short span (the usage between variable) and short lifetime (when the last variable used).  
+  Eg: variable `employee` are used in line 1, 3, 5, 7. So span average is 2, and lifetime is 7.
+- Group related statement to one block. It is shortening span and lifetime, also easier to refactor (extract method).  
   Prefer this: 
     ```
     declare var1
@@ -249,7 +249,7 @@
   | **6 – 10** | Moderate Risk | Consider refactoring to simplify the routine. |
   | **11 – 20** | High Risk | Break apart into separate routines and call them. |
   | **21+** | Very High Risk | Untestable. Complete rewrite required. |
-- All complexity so far: naming, number of params, variable lifetime, variable live, nested logic, and mc cabe
+- All complexity so far: naming, number of params, variable span, variable lifetime, nested logic, and mc cabe
 
 
 ## Part V: Code Improvements
